@@ -1,11 +1,28 @@
-ACCOUNT_FIELDS = []
-AD_GROUP_FIELDS = []
-AD_GROUP_AD_FIELDS = []
-CAMPAIGN_FIELDS = []
-BIDDING_STRATEGY_FIELDS = []
+# Core streams
 ACCESSIBLE_BIDDING_STRATEGY_FIELDS = []
+ACCOUNT_FIELDS = []
+AD_GROUP_AD_FIELDS = []
+AD_GROUP_CRITERION_FIELDS = []
+AD_GROUP_FIELDS = []
+BIDDING_STRATEGY_FIELDS = []
+CALL_VIEW_FIELDS = []
 CAMPAIGN_BUDGET_FIELDS = []
+CAMPAIGN_CRITERION_FIELDS = []
+CAMPAIGN_FIELDS = []
+CAMPAIGN_LABEL_FIELDS = []
+CARRIER_CONSTANT_FIELDS = []
+FEED_FIELDS = []
+FEED_ITEM_FIELDS = []
 LABEL_FIELDS = []
+LANGUAGE_CONSTANT_FIELDS = []
+MOBILE_APP_CATEGORY_CONSTANT_FIELDS = []
+MOBILE_DEVICE_CONSTANT_FIELDS = []
+OPERATING_SYSTEM_VERSION_CONSTANT_FIELDS = []
+TOPIC_CONSTANT_FIELDS = []
+USER_INTEREST_FIELDS = []
+USER_LIST_FIELDS = []
+
+# Report streams
 ACCOUNT_PERFORMANCE_REPORT_FIELDS = [
     "customer.auto_tagging_enabled",
     "customer.currency_code",
@@ -101,6 +118,7 @@ AD_GROUP_PERFORMANCE_REPORT_FIELDS = [
     "campaign.bidding_strategy",
     "campaign.bidding_strategy_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.manual_cpc.enhanced_cpc_enabled",
     "campaign.name",
     "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -290,6 +308,7 @@ AD_PERFORMANCE_REPORT_FIELDS = [
     "ad_group_ad.status",
     "campaign.base_campaign",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -549,9 +568,13 @@ CAMPAIGN_AUDIENCE_PERFORMANCE_REPORT_FIELDS = [
     "campaign.base_campaign",
     "campaign.bidding_strategy",
     "campaign.bidding_strategy_type",
+    "campaign.id",
     "campaign.name",
     "campaign.status",
+    "campaign_criterion.age_range.type",
     "campaign_criterion.bid_modifier",
+    "campaign_criterion.criterion_id",
+    "campaign_criterion.combined_audience.combined_audience",
     "customer.currency_code",
     "customer.descriptive_name",
     "customer.descriptive_name",
@@ -746,6 +769,7 @@ CLICK_PERFORMANCE_REPORT_FIELDS = [
     "ad_group.name",
     "ad_group.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "click_view.ad_group_ad",
@@ -801,6 +825,7 @@ DISPLAY_KEYWORD_PERFORMANCE_REPORT_FIELDS = [
     "campaign.bidding_strategy",
     "campaign.bidding_strategy_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -890,6 +915,7 @@ DISPLAY_TOPICS_PERFORMANCE_REPORT_FIELDS = [
     "campaign.bidding_strategy",
     "campaign.bidding_strategy_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -960,6 +986,7 @@ EXPANDED_LANDING_PAGE_REPORT_FIELDS = [
     "ad_group.status",
     "campaign.advertising_channel_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "expanded_landing_page_view.expanded_final_url",
@@ -1032,6 +1059,7 @@ GENDER_PERFORMANCE_REPORT_FIELDS = [
     "campaign.base_campaign",
     "campaign.bidding_strategy",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1101,6 +1129,7 @@ GEO_PERFORMANCE_REPORT_FIELDS = [
     "ad_group.name",
     "ad_group.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1158,6 +1187,7 @@ KEYWORDLESS_QUERY_REPORT_FIELDS = [
     "ad_group.name",
     "ad_group.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1167,6 +1197,7 @@ KEYWORDLESS_QUERY_REPORT_FIELDS = [
     "customer.time_zone",
     "dynamic_search_ads_search_term_view.headline",
     "dynamic_search_ads_search_term_view.landing_page",
+    "dynamic_search_ads_search_term_view.page_url",
     "dynamic_search_ads_search_term_view.search_term",
     "metrics.all_conversions",
     "metrics.all_conversions_from_interactions_rate",
@@ -1232,6 +1263,7 @@ KEYWORDS_PERFORMANCE_REPORT_FIELDS = [
     "campaign.bidding_strategy",
     "campaign.bidding_strategy_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.manual_cpc.enhanced_cpc_enabled",
     "campaign.name",
     "campaign.percent_cpc.enhanced_cpc_enabled",
@@ -1331,6 +1363,7 @@ LANDING_PAGE_REPORT_FIELDS = [
     "ad_group.status",
     "campaign.advertising_channel_type",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "landing_page_view.unexpanded_final_url",
@@ -1385,6 +1418,7 @@ PLACEHOLDER_FEED_ITEM_REPORT_FIELDS = [
     "ad_group.status",
     "ad_group_ad.resource_name",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1392,6 +1426,11 @@ PLACEHOLDER_FEED_ITEM_REPORT_FIELDS = [
     "customer.descriptive_name",
     "customer.id",
     "customer.time_zone",
+    "feed.attributes",
+    "feed.id",
+    "feed.name",
+    "feed.origin",
+    "feed.status",
     "feed_item.attribute_values",
     "feed_item.end_date_time",
     "feed_item.feed",
@@ -1452,6 +1491,7 @@ PLACEHOLDER_REPORT_FIELDS = [
     "ad_group.status",
     "ad_group_ad.resource_name",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.descriptive_name",
@@ -1525,6 +1565,7 @@ PLACEMENT_PERFORMANCE_REPORT_FIELDS = [
     "campaign.base_campaign",
     "campaign.bidding_strategy",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1597,6 +1638,7 @@ SEARCH_QUERY_PERFORMANCE_REPORT_FIELDS = [
     "ad_group_ad.ad.id",
     "ad_group_ad.ad.tracking_url_template",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1662,6 +1704,7 @@ SHOPPING_PERFORMANCE_REPORT_FIELDS = [
     "ad_group.name",
     "ad_group.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.descriptive_name",
@@ -1730,6 +1773,7 @@ USER_LOCATION_PERFORMANCE_REPORT_FIELDS = [
     "ad_group.name",
     "ad_group.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",
@@ -1789,6 +1833,7 @@ VIDEO_PERFORMANCE_REPORT_FIELDS = [
     "ad_group_ad.ad.id",
     "ad_group_ad.status",
     "campaign.id",
+    "campaign.labels",
     "campaign.name",
     "campaign.status",
     "customer.currency_code",

@@ -148,14 +148,16 @@ class StartDateTest(GoogleAdsBase):
 class StartDateTest1(StartDateTest):
 
     missing_coverage_streams = { # no test data available
+        'ad_group_audience_performance_report',
+        'call_details',
+        'campaign_audience_performance_report',
+        'click_performance_report',  # only last 90 days returned
         'display_keyword_performance_report',
         'display_topics_performance_report',
+        'keywords_performance_report',
         'placement_performance_report',
-        "keywords_performance_report",
-        "video_performance_report",
-        'ad_group_audience_performance_report',
-        "shopping_performance_report",
-        'campaign_audience_performance_report',
+        'shopping_performance_report',
+        'video_performance_report',
     }
 
     def setUp(self):
@@ -163,6 +165,7 @@ class StartDateTest1(StartDateTest):
         self.start_date_2 = self.timedelta_formatted(self.start_date_1, days=15)
         self.streams_to_test = self.expected_streams() - {
             'search_query_performance_report', # Covered in other start date test
+            'call_details', # Need test data
         } - self.missing_coverage_streams # TODO_TDL-17885
 
     @staticmethod
