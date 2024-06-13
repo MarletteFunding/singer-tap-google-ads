@@ -13,12 +13,12 @@ setup(name='tap-google-ads',
           'singer-python==6.0.0',
           'requests==2.26.0',
           'backoff==2.2.1',
-          'google-ads==22.1.0',
-          'protobuf==4.24.4',
+          'google-ads==23.1.0',
+          'protobuf==4.25.0',
 
           # Necessary to handle gRPC exceptions properly, documented
           # in an issue here: https://github.com/googleapis/python-api-core/issues/301
-          'grpcio-status==1.44.0',
+          'grpcio-status==1.59.0',
       ],
       extras_require= {
           'dev': [
