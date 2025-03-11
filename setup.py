@@ -11,7 +11,7 @@ setup(name='tap-google-ads',
       py_modules=['tap_google_ads'],
       install_requires=[
           'singer-python==6.0.0',
-          'requests==2.26.0',
+          'requests==2.32.2',
           'backoff==2.2.1',
           'google-ads==25.1.0',
           'protobuf==5.28.0',
