@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='tap-google-ads',
-      version='1.8.2',
+      version='1.8.3',
       description='Singer.io tap for extracting data from the Google Ads API',
       author='Stitch',
       url='http://singer.io',
@@ -19,6 +19,9 @@ setup(name='tap-google-ads',
           # Necessary to handle gRPC exceptions properly, documented
           # in an issue here: https://github.com/googleapis/python-api-core/issues/301
           'grpcio-status==1.66.2',
+          
+          # Required for Python 3.13 compatibility - google-api-core needs this
+          'packaging>=23.0',
       ],
       extras_require= {
           'dev': [
